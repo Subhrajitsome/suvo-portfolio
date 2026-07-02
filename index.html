@@ -2,88 +2,384 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>CreatorboySuvo | Premium 4K Cinematic Edits</title>
-    <meta name="description" content="Experience high-octane mass entries and cinematic transitions remastered in 4K by CreatorboySuvo.">
+    <meta name="description" content="Experience high-octane mass entries, cinematic transitions, and top-tier color grading remastered in ultra-crisp 4K by CreatorboySuvo.">
+    <meta name="keywords" content="CreatorboySuvo, 4K Edits, Cinematic Reels, Bollywood Mass Entry, South Indian Edits, Topaz Video AI, Premiere Pro">
+    <meta name="author" content="Subhrajit Some">
+    
+    <!-- Open Graph for Social Media Previews -->
+    <meta property="og:title" content="CreatorboySuvo | 4K Cinematic Edits">
+    <meta property="og:description" content="The ultimate portfolio of remastered 4K mass entries and cinematic transitions.">
+    <meta property="og:url" content="https://www.creatorboysuvo.com">
+    <meta property="og:type" content="website">
+    
+    <!-- JSON-LD for Google Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "CreatorboySuvo",
+      "url": "https://www.creatorboysuvo.com",
+      "sameAs": ["https://www.instagram.com/creatorboysuvo"],
+      "jobTitle": "Cinematic Video Editor",
+      "description": "Professional 4K Video Editor specializing in cinematic mass entries and ultra-crisp remasters."
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: { brand: { dark: '#0a0a0a', card: '#171717', pink: '#ff0055', purple: '#9d00ff', cyan: '#00f0ff' } }
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Syncopate', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#030305',
+                            surface: 'rgba(255, 255, 255, 0.03)',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            cyan: '#00f0ff',
+                            magenta: '#ff003c',
+                            purple: '#7a00ff'
+                        }
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float-up': 'floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        floatUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
                 }
             }
         }
     </script>
+
     <style>
-        body { background-color: #0a0a0a; font-family: 'Inter', sans-serif; }
-        .neon-text { background: linear-gradient(to right, #ff0055, #9d00ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .crunchy-thumb { filter: contrast(1.2) saturate(1.1) brightness(0.9); transition: transform 0.4s ease; }
-        .video-card:hover .crunchy-thumb { transform: scale(1.05); }
-        .glass-panel { background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        /* Base Dark Setup */
+        body {
+            background-color: #030305;
+            color: #ffffff;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Animated Grid Background */
+        .cyber-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -2;
+            pointer-events: none;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        /* Ambient Glow Blobs */
+        .glow-blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+        .glow-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #7a00ff; }
+        .glow-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: #00f0ff; opacity: 0.2;}
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(10%, 15%) scale(1.1); }
+        }
+
+        /* Ultra-Crisp 4K Thumbnail Filter */
+        .hdr-thumb {
+            filter: contrast(1.15) saturate(1.2) brightness(0.95);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .video-card {
+            transform: translateZ(0); /* Hardware acceleration */
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(0, 240, 255, 0.15);
+        }
+
+        .video-card:hover .hdr-thumb {
+            transform: scale(1.05);
+            filter: contrast(1.2) saturate(1.3) brightness(1.1);
+        }
+
+        /* Glassmorphism Badge */
+        .glass-badge {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Glowing Text FX */
+        .text-glow {
+            text-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #00f0ff, #ff003c, #7a00ff, #00f0ff);
+            background-size: 300% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* Spotlight Effect for Cards (Applied via JS) */
+        .spotlight-border {
+            position: relative;
+        }
+        .spotlight-border::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.4), transparent 40%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .spotlight-border:hover::before { opacity: 1; }
+
+        /* Hide scrollbar for category filters */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="text-white antialiased">
+<body class="antialiased selection:bg-brand-magenta selection:text-white">
 
-    <header class="fixed w-full top-0 z-50 glass-panel">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <h1 class="font-black text-2xl tracking-tighter uppercase">Creatorboy<span class="text-brand-pink">Suvo</span></h1>
-            <a href="https://instagram.com/creatorboysuvo" target="_blank" class="px-6 py-2 rounded-full bg-brand-pink font-bold text-sm hover:scale-105 transition-transform">Follow on Instagram</a>
+    <!-- Background Elements -->
+    <div class="cyber-grid"></div>
+    <div class="glow-blob glow-1"></div>
+    <div class="glow-blob glow-2"></div>
+
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <div class="absolute inset-0 bg-brand-bg/60 backdrop-blur-md border-b border-white/5"></div>
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
+            <h1 class="font-display text-xl md:text-2xl tracking-tighter uppercase text-white">
+                Creatorboy<span class="text-brand-cyan text-glow">Suvo</span>
+            </h1>
+            <a href="https://instagram.com/creatorboysuvo" target="_blank" rel="noopener noreferrer" class="group relative px-6 py-2.5 rounded-full overflow-hidden bg-white/5 border border-white/10 hover:border-brand-cyan/50 transition-all duration-300">
+                <div class="absolute inset-0 w-0 bg-gradient-to-r from-brand-cyan to-brand-purple transition-all duration-[400ms] ease-out group-hover:w-full"></div>
+                <span class="relative z-10 flex items-center gap-2 font-bold text-sm">
+                    <i class="fa-brands fa-instagram"></i> Follow
+                </span>
+            </a>
         </div>
     </header>
 
     <main class="pt-32 pb-20">
-        <section class="max-w-7xl mx-auto px-6 text-center mb-16">
-            <h2 class="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tight">Cinematic Edits, <span class="neon-text">Remastered.</span></h2>
-            <div id="filter-container" class="flex flex-wrap justify-center gap-3"></div>
+        <section class="max-w-7xl mx-auto px-6 pt-10 pb-16 md:pt-20 md:pb-24 flex flex-col items-center text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-8 animate-float-up" style="animation-delay: 0.1s;">
+                <span class="w-2 h-2 rounded-full bg-brand-magenta animate-pulse"></span>
+                <span class="text-xs font-semibold uppercase tracking-widest text-gray-300">Ultra 4K Remastered Edits</span>
+            </div>
+            
+            <h2 class="font-display text-4xl md:text-7xl lg:text-8xl leading-tight mb-6 animate-float-up" style="animation-delay: 0.2s;">
+                FEEL EVERY <br>
+                <span class="gradient-text animate-gradient-x">FRAME.</span>
+            </h2>
+            
+            <p class="max-w-2xl text-gray-400 md:text-lg mb-10 animate-float-up" style="animation-delay: 0.3s;">
+                High-octane mass entries, seamless cinematic transitions, and industry-grade color grading. Click any reel to experience the raw 4K quality directly on Instagram.
+            </p>
+
+            <!-- Filter Tabs -->
+            <div class="w-full max-w-3xl overflow-x-auto no-scrollbar py-4 animate-float-up" style="animation-delay: 0.4s;">
+                <div id="filter-container" class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-3 px-2">
+                    <!-- Filters injected via JS -->
+                </div>
+            </div>
         </section>
 
-        <section class="max-w-7xl mx-auto px-6">
-            <div id="reels-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+        <section class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div id="reels-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                <!-- Videos injected via JS -->
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-black/50 backdrop-blur-lg py-10 mt-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-gray-500 text-sm font-medium">© 2026 CreatorboySuvo. All edits are for entertainment purposes.</p>
+            <div class="flex gap-4">
+                <a href="https://instagram.com/creatorboysuvo" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-youtube text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // ADMIN: ADD YOUR REELS HERE
+        // ADMIN: ADD YOUR REELS HERE. 
+        // NOTE: Use the specific link to the exact Reel, NOT your profile.
         const reelsData = [
-            { id: 1, title: "Pushpa 2 Mass Entry", category: "South Indian", img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800", link: "https://instagram.com/creatorboysuvo" },
-            { id: 2, title: "Pathaan Action Edit", category: "Bollywood", img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800", link: "https://instagram.com/creatorboysuvo" }
+            { 
+                id: 1, 
+                title: "Pushpa 2 Mass Entry", 
+                category: "South Indian", 
+                img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800", 
+                link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
+            },
+            { 
+                id: 2, 
+                title: "Pathaan Action Edit", 
+                category: "Bollywood", 
+                img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800", 
+                link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
+            },
+            { 
+                id: 3, 
+                title: "KGF Rocky Bhai 4K", 
+                category: "South Indian", 
+                img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800", 
+                link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
+            },
+            { 
+                id: 4, 
+                title: "John Wick Transition", 
+                category: "Hollywood", 
+                img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800", 
+                link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
+            },
+            { 
+                id: 5, 
+                title: "Dev Bengali Mass", 
+                category: "Bengali", 
+                img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800", 
+                link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
+            }
         ];
 
         const grid = document.getElementById('reels-grid');
         const filterContainer = document.getElementById('filter-container');
+        let currentActiveFilter = "All";
 
-        function render(filter = "All") {
+        // Advanced Intersection Observer for Scroll Animations
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-float-up');
+                    entry.target.style.opacity = "1";
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        function renderReels(filter = "All") {
             grid.innerHTML = '';
+            let delayCounter = 0;
+
             reelsData.filter(r => filter === "All" || r.category === filter).forEach(r => {
-                const card = document.createElement('div');
-                card.className = "video-card cursor-pointer overflow-hidden rounded-xl bg-brand-card border border-white/5";
+                const card = document.createElement('a');
+                card.href = r.link;
+                card.target = "_blank";
+                card.rel = "noopener noreferrer";
+                // Setting initial opacity to 0 for the scroll animation to take over
+                card.className = "video-card spotlight-border group block relative rounded-2xl overflow-hidden bg-brand-surface border border-brand-border cursor-pointer";
+                card.style.opacity = "0"; 
+                
                 card.innerHTML = `
-                    <div class="overflow-hidden aspect-[9/16]">
-                        <img src="${r.img}" class="crunchy-thumb w-full h-full object-cover">
+                    <div class="relative aspect-[4/5] sm:aspect-[9/16] overflow-hidden bg-[#111]">
+                        <!-- Premium 4K Badge -->
+                        <div class="absolute top-4 left-4 z-20 glass-badge px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                            <i class="fa-solid fa-bolt text-brand-cyan text-[10px]"></i>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-white">4K Crisp</span>
+                        </div>
+                        
+                        <img src="${r.img}" alt="${r.title}" loading="lazy" class="hdr-thumb absolute inset-0 w-full h-full object-cover">
+                        
+                        <!-- Play Icon Overlay -->
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 scale-50 group-hover:scale-100">
+                            <div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                                <i class="fa-solid fa-play text-white ml-1 text-xl"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-sm truncate">${r.title}</h3>
-                        <p class="text-brand-pink text-xs uppercase tracking-widest mt-1">${r.category}</p>
+                    
+                    <div class="p-5 relative z-20 bg-gradient-to-t from-brand-bg to-transparent">
+                        <p class="text-brand-magenta text-[10px] font-bold uppercase tracking-[0.2em] mb-1">${r.category}</p>
+                        <h3 class="font-display font-bold text-lg text-white truncate group-hover:text-brand-cyan transition-colors">${r.title}</h3>
                     </div>
                 `;
-                card.onclick = () => window.open(r.link, '_blank');
+
+                // Add Spotlight Effect Logic
+                card.onmousemove = e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                };
+
                 grid.appendChild(card);
+                observer.observe(card); // Attach scroll animation
             });
         }
 
-        const cats = ["All", "Bollywood", "South Indian", "Tollywood", "Bengali"];
-        cats.forEach(c => {
+        // Render Filters
+        const categories = ["All", "Bollywood", "South Indian", "Hollywood", "Bengali"];
+        categories.forEach(cat => {
             const btn = document.createElement('button');
-            btn.className = "px-4 py-2 rounded-full text-xs font-bold bg-white/5 hover:bg-brand-pink transition-colors";
-            btn.textContent = c;
-            btn.onclick = () => render(c);
+            btn.className = `whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-bold border transition-all duration-300 ${cat === currentActiveFilter ? 'bg-white text-black border-white' : 'bg-transparent text-gray-400 border-white/10 hover:border-white/30 hover:text-white'}`;
+            btn.textContent = cat;
+            
+            btn.onclick = () => {
+                currentActiveFilter = cat;
+                // Update button styles
+                Array.from(filterContainer.children).forEach(b => {
+                    b.className = `whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-bold border transition-all duration-300 ${b.textContent === cat ? 'bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.2)]' : 'bg-transparent text-gray-400 border-white/10 hover:border-white/30 hover:text-white'}`;
+                });
+                renderReels(cat);
+            };
             filterContainer.appendChild(btn);
         });
 
-        render();
+        // Initialize
+        renderReels();
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+            } else {
+                nav.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
+            }
+        });
     </script>
 </body>
 </html>
