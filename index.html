@@ -3,64 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>CreatorboySuvo | Premium 4K Cinematic Edits</title>
+    <title>CreatorboySuvo | Premium Cinematic Edits</title>
     <meta name="description" content="Experience high-octane mass entries, cinematic transitions, and top-tier color grading remastered in ultra-crisp 4K by CreatorboySuvo.">
-    <meta name="keywords" content="CreatorboySuvo, 4K Edits, Cinematic Reels, Bollywood Mass Entry, South Indian Edits, Topaz Video AI, Premiere Pro">
-    <meta name="author" content="Subhrajit Some">
+    <meta name="theme-color" content="#030305">
     
-    <!-- Open Graph for Social Media Previews -->
+    <!-- Open Graph for Social Media Preview -->
     <meta property="og:title" content="CreatorboySuvo | 4K Cinematic Edits">
-    <meta property="og:description" content="The ultimate portfolio of remastered 4K mass entries and cinematic transitions.">
-    <meta property="og:url" content="https://www.creatorboysuvo.com">
+    <meta property="og:description" content="The ultimate portfolio of remastered 4K mass entries and edits.">
     <meta property="og:type" content="website">
-    
-    <!-- JSON-LD for Google Search -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "CreatorboySuvo",
-      "url": "https://www.creatorboysuvo.com",
-      "sameAs": ["https://www.instagram.com/creatorboysuvo"],
-      "jobTitle": "Cinematic Video Editor",
-      "description": "Professional 4K Video Editor specializing in cinematic mass entries and ultra-crisp remasters."
-    }
-    </script>
 
+    <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        display: ['Syncopate', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Outfit', 'sans-serif'], display: ['Syncopate', 'sans-serif'] },
                     colors: {
                         brand: {
-                            bg: '#030305',
-                            surface: 'rgba(255, 255, 255, 0.03)',
-                            border: 'rgba(255, 255, 255, 0.08)',
-                            cyan: '#00f0ff',
-                            magenta: '#ff003c',
-                            purple: '#7a00ff'
-                        }
-                    },
-                    animation: {
-                        'gradient-x': 'gradient-x 15s ease infinite',
-                        'float-up': 'floatUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                    },
-                    keyframes: {
-                        'gradient-x': {
-                            '0%, 100%': { 'background-position': '0% 50%' },
-                            '50%': { 'background-position': '100% 50%' },
-                        },
-                        floatUp: {
-                            '0%': { opacity: '0', transform: 'translateY(40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            bg: '#030305', cyan: '#00f0ff', magenta: '#ff003c', gold: '#ffd700', flame: '#ff5a00'
                         }
                     }
                 }
@@ -69,317 +33,381 @@
     </script>
 
     <style>
-        /* Base Dark Setup */
-        body {
+        /* Base Setup & Smooth Scroll */
+        body { background-color: #030305; color: #ffffff; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        
+        /* Cyber-Cinematic Glowing Background */
+        .ambient-bg {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none;
             background-color: #030305;
-            color: #ffffff;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Animated Grid Background */
-        .cyber-grid {
-            position: fixed;
-            top: 0; left: 0; width: 100vw; height: 100vh;
             background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: -2;
-            pointer-events: none;
-            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+                radial-gradient(circle at 15% 50%, rgba(0, 240, 255, 0.05), transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(255, 0, 60, 0.05), transparent 40%),
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+            animation: pulse-bg 8s ease-in-out infinite alternate;
+        }
+        @keyframes pulse-bg { 0% { opacity: 0.8; } 100% { opacity: 1; } }
+
+        /* SEAMLESS TRANSITIONS (Blur & Zoom) */
+        .view-container {
+            transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+            will-change: opacity, transform, filter;
+        }
+        .view-hidden {
+            opacity: 0; transform: scale(0.92); filter: blur(15px); pointer-events: none; position: absolute; top: 0; left: 0; width: 100%;
+        }
+        .view-active {
+            opacity: 1; transform: scale(1); filter: blur(0); position: relative; z-index: 10;
         }
 
-        /* Ambient Glow Blobs */
-        .glow-blob {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(120px);
-            z-index: -1;
-            opacity: 0.4;
-            pointer-events: none;
-            animation: float 20s infinite alternate ease-in-out;
+        /* --- ACTOR: ROUND POPPING EFFECT --- */
+        .actor-wrapper {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy spring effect */
+            cursor: pointer;
         }
-        .glow-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #7a00ff; }
-        .glow-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: #00f0ff; opacity: 0.2;}
-
-        @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(10%, 15%) scale(1.1); }
+        .actor-wrapper:hover {
+            transform: translateY(-12px) scale(1.08);
         }
-
-        /* Ultra-Crisp 4K Thumbnail Filter */
-        .hdr-thumb {
-            filter: contrast(1.15) saturate(1.2) brightness(0.95);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .video-card {
-            transform: translateZ(0); /* Hardware acceleration */
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s;
-        }
-
-        .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px -10px rgba(0, 240, 255, 0.15);
-        }
-
-        .video-card:hover .hdr-thumb {
-            transform: scale(1.05);
-            filter: contrast(1.2) saturate(1.3) brightness(1.1);
-        }
-
-        /* Glassmorphism Badge */
-        .glass-badge {
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Glowing Text FX */
-        .text-glow {
-            text-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(to right, #00f0ff, #ff003c, #7a00ff, #00f0ff);
-            background-size: 300% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
-        /* Spotlight Effect for Cards (Applied via JS) */
-        .spotlight-border {
+        .actor-circle {
             position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.8);
+            transition: all 0.4s ease;
         }
-        .spotlight-border::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            border-radius: inherit;
-            padding: 2px;
-            background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.4), transparent 40%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            z-index: 10;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s;
+        .actor-wrapper:hover .actor-circle {
+            border-color: #00f0ff;
+            box-shadow: 0 15px 40px rgba(0, 240, 255, 0.4);
         }
-        .spotlight-border:hover::before { opacity: 1; }
+        .actor-circle img {
+            transition: transform 0.7s ease, filter 0.5s ease;
+            filter: grayscale(20%) contrast(1.1);
+        }
+        .actor-wrapper:hover .actor-circle img {
+            transform: scale(1.15);
+            filter: grayscale(0%) contrast(1.2) brightness(1.1);
+        }
 
-        /* Hide scrollbar for category filters */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* --- REELS: 4K CRISP THUMBNAILS --- */
+        .hdr-thumb { 
+            filter: contrast(1.15) saturate(1.2) brightness(0.95); 
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+        }
+        .reel-card:hover .hdr-thumb { 
+            transform: scale(1.06); 
+            filter: contrast(1.25) saturate(1.3) brightness(1.05); 
+        }
+        
+        .reel-card { transition: transform 0.3s ease; }
+        .reel-card:active { transform: scale(0.97); } /* Smooth tap feel on mobile */
+
+        /* --- VIRAL EFFECTS --- */
+        /* > 50K Views : FIRE EFFECT */
+        .viral-fire-border { position: relative; }
+        .viral-fire-border::before {
+            content: ''; position: absolute; inset: -2px; border-radius: inherit; z-index: -1;
+            background: linear-gradient(45deg, #ff0000, #ff5a00, #ff9a00, #ff5a00, #ff0000);
+            background-size: 400%; animation: fire-glow 3s linear infinite;
+            filter: blur(8px); opacity: 0.9;
+        }
+        @keyframes fire-glow { 0% { background-position: 0% 0%; } 100% { background-position: 400% 0%; } }
+
+        /* > 1M Views : GOD TIER GLOW */
+        .million-god-border { position: relative; overflow: hidden; }
+        .million-god-border::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; z-index: -1;
+            background: conic-gradient(from 0deg, transparent 0%, rgba(255, 215, 0, 0.2) 25%, #ffd700 50%, rgba(255, 215, 0, 0.2) 75%, transparent 100%);
+            animation: rotate-god 4s linear infinite;
+        }
+        .million-god-border::after {
+            content: ''; position: absolute; inset: 2px; background: #030305; border-radius: inherit; z-index: -1;
+        }
+        @keyframes rotate-god { 100% { transform: rotate(360deg); } }
+
+        /* Stats Bar Glassmorphism */
+        .stat-bar { background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, transparent 100%); }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-magenta selection:text-white">
 
-    <!-- Background Elements -->
-    <div class="cyber-grid"></div>
-    <div class="glow-blob glow-1"></div>
-    <div class="glow-blob glow-2"></div>
+    <div class="ambient-bg"></div>
 
-    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
-        <div class="absolute inset-0 bg-brand-bg/60 backdrop-blur-md border-b border-white/5"></div>
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
-            <h1 class="font-display text-xl md:text-2xl tracking-tighter uppercase text-white">
-                Creatorboy<span class="text-brand-cyan text-glow">Suvo</span>
+    <header class="fixed w-full top-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <h1 class="font-display text-xl md:text-2xl tracking-tighter uppercase text-white cursor-pointer" onclick="showActorsView()">
+                Creatorboy<span class="text-brand-cyan" style="text-shadow: 0 0 20px rgba(0,240,255,0.6);">Suvo</span>
             </h1>
-            <a href="https://instagram.com/creatorboysuvo" target="_blank" rel="noopener noreferrer" class="group relative px-6 py-2.5 rounded-full overflow-hidden bg-white/5 border border-white/10 hover:border-brand-cyan/50 transition-all duration-300">
-                <div class="absolute inset-0 w-0 bg-gradient-to-r from-brand-cyan to-brand-purple transition-all duration-[400ms] ease-out group-hover:w-full"></div>
-                <span class="relative z-10 flex items-center gap-2 font-bold text-sm">
-                    <i class="fa-brands fa-instagram"></i> Follow
-                </span>
+            <a href="https://instagram.com/creatorboysuvo" target="_blank" class="group flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 hover:border-brand-magenta hover:bg-white/10 transition-all">
+                <i class="fa-brands fa-instagram text-brand-magenta group-hover:scale-110 transition-transform"></i>
+                <span class="font-bold text-sm text-white">Follow</span>
             </a>
         </div>
     </header>
 
-    <main class="pt-32 pb-20">
-        <section class="max-w-7xl mx-auto px-6 pt-10 pb-16 md:pt-20 md:pb-24 flex flex-col items-center text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-8 animate-float-up" style="animation-delay: 0.1s;">
-                <span class="w-2 h-2 rounded-full bg-brand-magenta animate-pulse"></span>
-                <span class="text-xs font-semibold uppercase tracking-widest text-gray-300">Ultra 4K Remastered Edits</span>
+    <main class="pt-28 pb-20 max-w-7xl mx-auto px-4 sm:px-6 relative min-h-screen">
+        
+        <!-- VIEW 1: ACTORS GRID (Round Popping UI) -->
+        <div id="view-actors" class="view-container view-active">
+            <div class="text-center mb-12 animate-[fadeIn_1s_ease-out]">
+                <h2 class="font-display text-3xl md:text-5xl lg:text-6xl font-bold mb-4 uppercase">
+                    Choose Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-magenta">Hero</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base font-medium">Select an actor to view their ultimate 4K remastered cinematic edits.</p>
             </div>
             
-            <h2 class="font-display text-4xl md:text-7xl lg:text-8xl leading-tight mb-6 animate-float-up" style="animation-delay: 0.2s;">
-                FEEL EVERY <br>
-                <span class="gradient-text animate-gradient-x">FRAME.</span>
-            </h2>
-            
-            <p class="max-w-2xl text-gray-400 md:text-lg mb-10 animate-float-up" style="animation-delay: 0.3s;">
-                High-octane mass entries, seamless cinematic transitions, and industry-grade color grading. Click any reel to experience the raw 4K quality directly on Instagram.
-            </p>
-
-            <!-- Filter Tabs -->
-            <div class="w-full max-w-3xl overflow-x-auto no-scrollbar py-4 animate-float-up" style="animation-delay: 0.4s;">
-                <div id="filter-container" class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-3 px-2">
-                    <!-- Filters injected via JS -->
-                </div>
-            </div>
-        </section>
-
-        <section class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div id="reels-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
-                <!-- Videos injected via JS -->
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/5 bg-black/50 backdrop-blur-lg py-10 mt-10">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-gray-500 text-sm font-medium">© 2026 CreatorboySuvo. All edits are for entertainment purposes.</p>
-            <div class="flex gap-4">
-                <a href="https://instagram.com/creatorboysuvo" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-youtube text-xl"></i></a>
+            <div id="actors-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto">
+                <!-- Actors injected via JS -->
             </div>
         </div>
-    </footer>
+
+        <!-- VIEW 2: REELS GRID -->
+        <div id="view-reels" class="view-container view-hidden">
+            <!-- Back Button -->
+            <div class="mb-8">
+                <button onclick="showActorsView()" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group w-fit">
+                    <div class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 group-hover:-translate-x-1 transition-all">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <span class="font-bold tracking-wider uppercase text-sm">Back to Actors</span>
+                </button>
+            </div>
+
+            <!-- Current Actor Header -->
+            <div class="flex items-center gap-6 mb-10 border-b border-white/10 pb-6">
+                <div class="w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden border-2 border-brand-cyan shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+                    <img id="current-actor-img" src="" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h2 id="current-actor-name" class="font-display text-3xl md:text-5xl font-bold uppercase tracking-tight text-white mb-1">Actor Name</h2>
+                    <p id="current-actor-count" class="text-brand-cyan font-bold tracking-widest uppercase text-xs md:text-sm">0 Premium Edits</p>
+                </div>
+            </div>
+
+            <!-- Reels Grid -->
+            <div id="reels-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+                <!-- Reels injected via JS -->
+            </div>
+        </div>
+    </main>
 
     <script>
-        // ADMIN: ADD YOUR REELS HERE. 
-        // NOTE: Use the specific link to the exact Reel, NOT your profile.
+        // ==========================================
+        // 👑 ADMIN AREA 1: ADD YOUR ACTORS HERE
+        // ==========================================
+        const actorsData = [
+            { id: "alluarjun", name: "Allu Arjun", img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800" },
+            { id: "srk", name: "Shahrukh Khan", img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800" },
+            { id: "yash", name: "Yash (Rocky)", img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800" },
+            { id: "prabhas", name: "Prabhas", img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800" }
+        ];
+
+        // ==========================================
+        // 👑 ADMIN AREA 2: ADD YOUR REELS HERE
+        // ==========================================
+        // Views > 50,000 = Fire Glow. Views > 1,000,000 = Golden God Tier.
         const reelsData = [
             { 
                 id: 1, 
+                actorId: "alluarjun", 
                 title: "Pushpa 2 Mass Entry", 
-                category: "South Indian", 
+                views: 1200000, // 1.2 Million (God Tier)
+                likes: "150K",
+                comments: "2.4K",
+                shares: "12K",
+                saves: "45K",
                 img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800", 
                 link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
             },
             { 
                 id: 2, 
-                title: "Pathaan Action Edit", 
-                category: "Bollywood", 
+                actorId: "srk", 
+                title: "Pathaan Cigar Edit", 
+                views: 65000, // 65K (Fire Tier)
+                likes: "12K",
+                comments: "450",
+                shares: "1.2K",
+                saves: "3.1K",
                 img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800", 
                 link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
             },
             { 
                 id: 3, 
-                title: "KGF Rocky Bhai 4K", 
-                category: "South Indian", 
+                actorId: "yash", 
+                title: "KGF 2 Helicopter", 
+                views: 24000, // Normal Tier
+                likes: "4.2K",
+                comments: "120",
+                shares: "500",
+                saves: "800",
                 img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800", 
                 link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
             },
             { 
                 id: 4, 
-                title: "John Wick Transition", 
-                category: "Hollywood", 
+                actorId: "alluarjun", 
+                title: "Ala Vaikunthapurramuloo BGM", 
+                views: 89000, // Fire Tier
+                likes: "18K",
+                comments: "600",
+                shares: "2.2K",
+                saves: "6.5K",
                 img: "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=800", 
-                link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
-            },
-            { 
-                id: 5, 
-                title: "Dev Bengali Mass", 
-                category: "Bengali", 
-                img: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800", 
                 link: "https://instagram.com/creatorboysuvo/reel/SPECIFIC_ID" 
             }
         ];
+        // ==========================================
 
-        const grid = document.getElementById('reels-grid');
-        const filterContainer = document.getElementById('filter-container');
-        let currentActiveFilter = "All";
+        const viewActors = document.getElementById('view-actors');
+        const viewReels = document.getElementById('view-reels');
+        const actorsGrid = document.getElementById('actors-grid');
+        const reelsGrid = document.getElementById('reels-grid');
 
-        // Advanced Intersection Observer for Scroll Animations
-        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-float-up');
-                    entry.target.style.opacity = "1";
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+        // Helper: Format large numbers (e.g., 1200000 -> 1.2M)
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num;
+        }
 
-        function renderReels(filter = "All") {
-            grid.innerHTML = '';
-            let delayCounter = 0;
+        // 1. Render Round Popping Actors
+        function renderActors() {
+            actorsGrid.innerHTML = '';
+            actorsData.forEach((actor, index) => {
+                // Auto-count how many reels belong to this actor
+                const reelCount = reelsData.filter(r => r.actorId === actor.id).length;
 
-            reelsData.filter(r => filter === "All" || r.category === filter).forEach(r => {
-                const card = document.createElement('a');
-                card.href = r.link;
-                card.target = "_blank";
-                card.rel = "noopener noreferrer";
-                // Setting initial opacity to 0 for the scroll animation to take over
-                card.className = "video-card spotlight-border group block relative rounded-2xl overflow-hidden bg-brand-surface border border-brand-border cursor-pointer";
-                card.style.opacity = "0"; 
+                const card = document.createElement('div');
+                card.onclick = () => showReelsView(actor, reelCount);
+                card.className = "actor-wrapper flex flex-col items-center gap-4 group";
+                card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+                card.style.opacity = "0";
                 
                 card.innerHTML = `
-                    <div class="relative aspect-[4/5] sm:aspect-[9/16] overflow-hidden bg-[#111]">
-                        <!-- Premium 4K Badge -->
-                        <div class="absolute top-4 left-4 z-20 glass-badge px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                            <i class="fa-solid fa-bolt text-brand-cyan text-[10px]"></i>
-                            <span class="text-[10px] font-bold tracking-widest uppercase text-white">4K Crisp</span>
-                        </div>
-                        
-                        <img src="${r.img}" alt="${r.title}" loading="lazy" class="hdr-thumb absolute inset-0 w-full h-full object-cover">
-                        
-                        <!-- Play Icon Overlay -->
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10"></div>
-                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 scale-50 group-hover:scale-100">
-                            <div class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-                                <i class="fa-solid fa-play text-white ml-1 text-xl"></i>
-                            </div>
-                        </div>
+                    <div class="actor-circle w-32 h-32 md:w-44 md:h-44">
+                        <img src="${actor.img}" loading="lazy" class="w-full h-full object-cover">
                     </div>
-                    
-                    <div class="p-5 relative z-20 bg-gradient-to-t from-brand-bg to-transparent">
-                        <p class="text-brand-magenta text-[10px] font-bold uppercase tracking-[0.2em] mb-1">${r.category}</p>
-                        <h3 class="font-display font-bold text-lg text-white truncate group-hover:text-brand-cyan transition-colors">${r.title}</h3>
+                    <div class="text-center">
+                        <h3 class="font-display font-bold text-lg md:text-xl text-white group-hover:text-brand-cyan transition-colors">${actor.name}</h3>
+                        <p class="text-gray-400 text-xs md:text-sm font-medium mt-1 group-hover:text-white transition-colors">${reelCount} Edits</p>
                     </div>
                 `;
-
-                // Add Spotlight Effect Logic
-                card.onmousemove = e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    card.style.setProperty('--mouse-x', `${x}px`);
-                    card.style.setProperty('--mouse-y', `${y}px`);
-                };
-
-                grid.appendChild(card);
-                observer.observe(card); // Attach scroll animation
+                actorsGrid.appendChild(card);
             });
         }
 
-        // Render Filters
-        const categories = ["All", "Bollywood", "South Indian", "Hollywood", "Bengali"];
-        categories.forEach(cat => {
-            const btn = document.createElement('button');
-            btn.className = `whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-bold border transition-all duration-300 ${cat === currentActiveFilter ? 'bg-white text-black border-white' : 'bg-transparent text-gray-400 border-white/10 hover:border-white/30 hover:text-white'}`;
-            btn.textContent = cat;
+        // 2. Render Reels (9:16 Aspect Ratio) with All Stats
+        function renderReels(actorId) {
+            reelsGrid.innerHTML = '';
+            const filteredReels = reelsData.filter(r => r.actorId === actorId);
+
+            if (filteredReels.length === 0) {
+                reelsGrid.innerHTML = `<p class="text-gray-500 col-span-full text-center py-10 font-medium">4K Edits dropping soon.</p>`;
+                return;
+            }
+
+            filteredReels.forEach((r, index) => {
+                // Determine Viral Status (Fire / God Tier)
+                let borderClass = "border border-white/10 hover:border-brand-cyan/50";
+                let badgeHtml = "";
+
+                if (r.views >= 1000000) {
+                    borderClass = "million-god-border rounded-2xl"; 
+                    badgeHtml = `<div class="absolute top-3 right-3 z-30 bg-brand-gold text-black px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(255,215,0,0.8)] animate-pulse"><i class="fa-solid fa-crown mr-1"></i> 1M+ Views</div>`;
+                } else if (r.views >= 50000) {
+                    borderClass = "viral-fire-border rounded-2xl"; 
+                    badgeHtml = `<div class="absolute top-3 right-3 z-30 bg-brand-flame text-white px-3 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-[0_0_20px_rgba(255,90,0,0.8)]"><i class="fa-solid fa-fire mr-1"></i> Viral</div>`;
+                }
+
+                const card = document.createElement('a');
+                card.href = r.link;
+                card.target = "_blank"; // Opens instantly in new tab/Instagram app
+                card.rel = "noopener noreferrer";
+                card.className = `reel-card group block relative rounded-2xl overflow-hidden bg-brand-bg cursor-pointer ${borderClass}`;
+                card.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1}s`;
+                card.style.opacity = "0";
+                
+                card.innerHTML = `
+                    <div class="relative aspect-[9/16] overflow-hidden bg-[#111] rounded-2xl z-10">
+                        ${badgeHtml}
+                        
+                        <img src="${r.img}" alt="${r.title}" loading="lazy" class="hdr-thumb absolute inset-0 w-full h-full object-cover">
+                        
+                        <!-- Play Overlay -->
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 scale-50 group-hover:scale-100">
+                            <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 shadow-[0_0_30px_rgba(255,255,255,0.3)] text-white text-3xl pl-1">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
+
+                        <!-- Stats Bar at Bottom -->
+                        <div class="stat-bar absolute bottom-0 left-0 w-full p-4 pt-16 z-20 flex flex-col justify-end">
+                            <h3 class="font-display font-bold text-base md:text-lg text-white truncate drop-shadow-lg leading-tight mb-3">${r.title}</h3>
+                            
+                            <!-- 5 Stats Row -->
+                            <div class="flex flex-wrap items-center justify-between gap-y-2 text-gray-300 text-[11px] md:text-xs font-semibold">
+                                <span class="flex items-center gap-1.5" title="Views"><i class="fa-solid fa-eye text-brand-cyan"></i> ${formatNumber(r.views)}</span>
+                                <span class="flex items-center gap-1.5" title="Likes"><i class="fa-solid fa-heart text-brand-magenta"></i> ${r.likes}</span>
+                                <span class="flex items-center gap-1.5" title="Comments"><i class="fa-solid fa-comment text-gray-400"></i> ${r.comments}</span>
+                                <span class="flex items-center gap-1.5" title="Shares"><i class="fa-solid fa-paper-plane text-blue-400"></i> ${r.shares}</span>
+                                <span class="flex items-center gap-1.5" title="Saves"><i class="fa-solid fa-bookmark text-brand-gold"></i> ${r.saves}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                reelsGrid.appendChild(card);
+            });
+        }
+
+        // 3. Smooth Transitions
+        function showReelsView(actor, reelCount) {
+            // Update Headers
+            document.getElementById('current-actor-name').textContent = actor.name;
+            document.getElementById('current-actor-img').src = actor.img;
+            document.getElementById('current-actor-count').textContent = `${reelCount} Premium Edits`;
             
-            btn.onclick = () => {
-                currentActiveFilter = cat;
-                // Update button styles
-                Array.from(filterContainer.children).forEach(b => {
-                    b.className = `whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-bold border transition-all duration-300 ${b.textContent === cat ? 'bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.2)]' : 'bg-transparent text-gray-400 border-white/10 hover:border-white/30 hover:text-white'}`;
-                });
-                renderReels(cat);
-            };
-            filterContainer.appendChild(btn);
-        });
+            renderReels(actor.id);
+
+            // Blur out Actors
+            viewActors.classList.remove('view-active');
+            viewActors.classList.add('view-hidden');
+            
+            // Zoom in Reels
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                viewReels.classList.remove('view-hidden');
+                viewReels.classList.add('view-active');
+            }, 300); // Super fast 300ms transition
+        }
+
+        function showActorsView() {
+            // Blur out Reels
+            viewReels.classList.remove('view-active');
+            viewReels.classList.add('view-hidden');
+            
+            // Zoom in Actors
+            setTimeout(() => {
+                viewActors.classList.remove('view-hidden');
+                viewActors.classList.add('view-active');
+            }, 300);
+        }
+
+        // Animations
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = `
+            @keyframes fadeInUp {
+                0% { opacity: 0; transform: translateY(20px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
 
         // Initialize
-        renderReels();
+        renderActors();
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
-            } else {
-                nav.classList.remove('shadow-[0_4px_30px_rgba(0,0,0,0.5)]');
-            }
-        });
     </script>
 </body>
 </html>
